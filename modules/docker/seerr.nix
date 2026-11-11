@@ -11,7 +11,7 @@
         PGID = "100";
       };
       volumes = [
-        "/fast/seerr:/config"
+        "/fast/seerr:/app/config"
       ];
       ports = [
         "5055:5055"
