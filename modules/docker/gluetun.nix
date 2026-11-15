@@ -7,9 +7,11 @@
       image = "qmcgaw/gluetun:latest";
       environment = {
         VPN_SERVICE_PROVIDER = "private internet access";
-        SERVER_REGIONS = "Switzerland";
+        VPN_TYPE = "openvpn";
+        SERVER_REGIONS = "Netherlands,Switzerland,CA Montreal,CA Vancouver,CA Toronto,DE Berlin";
         VPN_PORT_FORWARDING = "on";
         PORT_FORWARD_ONLY = "true";
+        OPENVPN_CIPHERS = "AES-128-GCM";
       };
       environmentFiles = [
         config.sops.secrets.pia_env.path
