@@ -14,6 +14,7 @@
     unzip
     age
     sops
+    yt-dlp
   ];
 
   programs.git = {
@@ -72,9 +73,10 @@
     enableCompletion = true;
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
+      cpn = "sudo cp -r ~/nixos-config/* /etc/nixos/";
+      up = "nix flake update && sudo nixos-rebuild switch -- flake ~/nixos-config#nixos && reboot";
       ls = "eza --long --icons --git --header --icons -A";
       lg = "lazygit";
-      cpn = "sudo cp -r ~/nixos-config/* /etc/nixos/";
     };
   };
 

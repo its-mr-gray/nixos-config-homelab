@@ -13,6 +13,7 @@
       volumes = [
         "/fast/lidarr:/config"
         "/fast/torrents:/downloads"
+        "/media/media/music:/music"
       ];
       ports = [
         "8686:8686"
