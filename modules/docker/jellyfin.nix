@@ -14,6 +14,8 @@
         "/fast/jellyfin/config:/config"
         "/media/media/tv:/media/tv"
         "/media/media/movies:/media/movies"
+        "/media/media/anime:/media/anime"
+        "/media/media/youtube:/media/youtube"
       ];
       # networks = [ "host" ];
       extraOptions = [ "--network=host" ];

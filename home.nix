@@ -14,6 +14,7 @@
     unzip
     age
     sops
+    ffmpeg
     yt-dlp
   ];
 
