@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  uploadLocation = "/fast/immich/library"; # or "/fast/immich/library" if you prefer SSD
+  uploadLocation = "/fast/immich/library";
   dbDataLocation = "/fast/immich/postgres";
   modelCache = "/fast/immich/model-cache";
 in

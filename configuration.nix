@@ -110,6 +110,8 @@ in
     defaultSopsFile = ./secrets.yaml;
 
     secrets.pia_env = { };
+    secrets.git_env = { };
+    secrets.immich_env = { };
   };
 
   #firewall ports
