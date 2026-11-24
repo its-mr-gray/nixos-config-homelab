@@ -4,7 +4,7 @@
   virtualisation.oci-containers = {
     backend = "docker";
     containers.jellyfin = {
-      image = "lscr.io/linuxserver/jellyfin:latest";
+      image = "dotwee/jellyfin-yt-dlp:latest";
       environment = {
         TZ = "America/New_York";
         PUID = "1000";
@@ -17,7 +17,6 @@
         "/media/media/anime:/media/anime"
         "/media/media/youtube:/media/youtube"
       ];
-      # networks = [ "host" ];
       extraOptions = [ "--network=host" ];
       autoStart = true;
     };

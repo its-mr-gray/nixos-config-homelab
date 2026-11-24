@@ -22,6 +22,7 @@ in
     ./modules/docker/sonarr.nix
     ./modules/docker/lidarr.nix
     ./modules/docker/seerr.nix
+    ./modules/docker/immich.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
