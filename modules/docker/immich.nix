@@ -4,8 +4,6 @@ let
   uploadLocation = "/fast/immich/library"; # or "/fast/immich/library" if you prefer SSD
   dbDataLocation = "/fast/immich/postgres";
   modelCache = "/fast/immich/model-cache";
-
-  dbPassword = config.sops.secrets.immich_env.path;
 in
 {
   systemd.services.docker-immich-net = {
@@ -36,11 +34,13 @@ in
           DB_HOSTNAME = "immich-database";
           DB_PORT = "5432";
           DB_USERNAME = "postgres";
-          DB_PASSWORD = dbPassword;
           DB_DATABASE_NAME = "immich";
           REDIS_HOSTNAME = "immich-redis";
           IMMICH_LOG_LEVEL = "log";
         };
+        environmentFiles = [
+          config.sops.secrets.immich_env.path
+        ];
         volumes = [
           "${uploadLocation}:/data"
           "/etc/localtime:/etc/localtime:ro"
@@ -72,11 +72,13 @@ in
         image = "ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0";
         autoStart = true;
         environment = {
-          POSTGRES_PASSWORD = dbPassword;
           POSTGRES_USER = "postgres";
           POSTGRES_DB = "immich";
           POSTGRES_INITDB_ARGS = "--data-checksums";
         };
+        environmentFiles = [
+          config.sops.secrets.immich_env.path
+        ];
         volumes = [
           "${dbDataLocation}:/var/lib/postgresql/data"
         ];
