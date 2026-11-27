@@ -4,7 +4,7 @@
   virtualisation.oci-containers = {
     backend = "docker";
     containers.jellyfin = {
-      image = "dotwee/jellyfin-yt-dlp:latest";
+      image = "lscr.io/linuxserver/jellyfin:latest";
       environment = {
         TZ = "America/New_York";
         PUID = "1000";

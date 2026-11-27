@@ -14,7 +14,7 @@ in
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "${pkgs.docker}/bin/docker network create immich-net || true";
+      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.docker}/bin/docker network inspect immich-net >/dev/null 2>&1 || ${pkgs.docker}/bin/docker network create immich-net'";
     };
   };
 
